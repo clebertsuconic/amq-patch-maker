@@ -1,4 +1,4 @@
-FROM registry.redhat.io/amq7/amq-broker-rhel8:7.11.0
+FROM registry.redhat.io/amq7/amq-broker-rhel8:7.11.4
 COPY lib /opt/amq/lib
 # Define the user
 USER 185

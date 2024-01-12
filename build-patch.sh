@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Check if the number of arguments is correct
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <bin-folder> <version>"
@@ -17,6 +19,7 @@ if [ ! -d "$bin_folder" ]; then
 fi
 
 rm -rf target
+mkdir target
 cp -r $bin_folder ./target
 cp Dockerfile target
 cd target
