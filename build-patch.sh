@@ -26,4 +26,5 @@ cd target
 
 
 docker build --tag amq-broker-rhel8:$version .
-docker save amq-broker-rhel8:$version -o ../$version.tar.gz
+docker save amq-broker-rhel8:$version -o $version.tar
+gzip $version.tar
