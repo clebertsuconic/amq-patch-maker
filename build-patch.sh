@@ -4,23 +4,23 @@ set -e
 
 # Check if the number of arguments is correct
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <bin-folder> <version>"
+    echo "Usage: $0 <lib-folder> <version>"
     exit 1
 fi
 
 # Assign the arguments to variables
-bin_folder=$1
+lib_folder=$1
 version=$2
 
-# Check if the bin folder exists
-if [ ! -d "$bin_folder" ]; then
-    echo "Error: Bin folder '$bin_folder' does not exist."
+# Check if the lib folder exists
+if [ ! -d "$lib_folder" ]; then
+    echo "Error: Bin folder '$lib_folder' does not exist."
     exit 1
 fi
 
 rm -rf target
 mkdir target
-cp -r $bin_folder ./target
+cp -r $lib_folder/ ./target/lib
 cp Dockerfile target
 cd target
 
